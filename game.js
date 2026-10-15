@@ -58,6 +58,7 @@ function frogReact() {
     "BRO...",
     "SERIOUSLY?",
     "STAWP FROGGY!",
+    "GO AWAY!"
   ];
 
   frogMessage = frogLines[Math.floor(Math.random() * frogLines.length)];
