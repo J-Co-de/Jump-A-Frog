@@ -1,0 +1,142 @@
+:root {
+    --froggy-primary: #c2ab7b;
+    --froggy-secondary: #2f902f;
+    --froggy-text: rgb(220, 248, 209);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    background: var(--froggy-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15%;
+    width: 100%;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    h1 {
+        color: var(--froggy-text);
+        font-size: 4rem;
+    }
+}
+
+main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+
+    canvas {
+        background: var(--froggy-primary);
+        width: 100%;
+        height: 100%;
+        image-rendering: pixelated;
+    }
+
+    .fullScreenEnter {
+        position: absolute;
+        top: calc(50% - 3.75rem);
+        left: calc(50% - 3.75rem);
+        z-index: 2;
+        border-radius: 50%;
+        cursor: pointer;
+        width: 7.5rem;
+        height: 7.5rem;
+
+        &:active {
+            filter: brightness(105%);
+            scale: 1.05;
+        }
+    }
+
+    .fullScreenExit {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 2;
+        cursor: pointer;
+        color: red;
+        background: white;
+        border: 1px solid red;
+        font-size: 2rem;
+        text-decoration: underlin;
+
+        &:active {
+            filter: brightness(105%);
+            scale: 1.05;
+        }
+    }
+
+    .smash {
+        position: absolute;
+        top: 75%;
+        left: 45%;
+        width: 10%;
+        aspect-ratio: 1/1;
+        right: 1rem;
+        z-index: 2;
+        cursor: pointer;
+        background: red;
+        border: 5px solid grey;
+
+        border-radius: 50%;
+
+        &:active {
+            filter: brightness(105%);
+            scale: 1.05;
+        }
+    }
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: var(--froggy-secondary);
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2;
+
+    p {
+        width: 95%;
+        color: var(--froggy-text);
+        font-size: 2rem;
+        font-weight: 600;
+        text-align: center;
+    }
+}
+
+*[hidden] {
+    display: none;
+}
