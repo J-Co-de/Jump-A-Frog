@@ -58,7 +58,7 @@ function frogReact() {
     "BRO...",
     "SERIOUSLY?",
     "STAWP FROGGY!",
-    "GO AWAY!"
+    "GO AWAY!",
   ];
 
   frogMessage = frogLines[Math.floor(Math.random() * frogLines.length)];
@@ -199,3 +199,17 @@ function gameLoop() {
 }
 
 gameLoop();
+
+function checkOrientation() {
+  const overlay = document.getElementById("rotateOverlay");
+
+  if (window.innerHeight > window.innerWidth) {
+    overlay.style.display = "flex"; // portrait → show overlay
+  } else {
+    overlay.style.display = "none"; // landscape → hide overlay
+  }
+}
+
+window.addEventListener("resize", checkOrientation);
+window.addEventListener("orientationchange", checkOrientation);
+checkOrientation();
